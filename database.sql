@@ -25,28 +25,28 @@ CREATE TABLE reparto (
 \COPY peliculas FROM 'references/peliculas.csv' csv header;
 \COPY reparto FROM 'references/reparto.csv' csv header;
 
----Obtain id TITANIC
---SELECT id FROM peliculas WHERE pelicula = 'Titanic';
---
-----Obtain ACTORS from TITANIC
---SELECT actor FROM reparto WHERE id = 2;
---
-----Obtain FILMS of HARRISON FORD
---SELECT actor,COUNT(actor) 
---AS NUMBERS_HARRISON_FORD_FILMS
---FROM reparto WHERE actor = 'Harrison Ford'
---GROUP BY actor;
---
-----FILMS BETWEEN 1990-1999
---SELECT pelicula FROM peliculas WHERE ano_estreno BETWEEN 1990 AND 1999 ORDER BY pelicula ASC;
---
-----Count Lenght
---SELECT pelicula, LENGTH(pelicula) AS longitud_titulo
---FROM peliculas;
---
-----Obtain max length
---SELECT MAX(LENGTH(pelicula)) AS longitud_titulo_maximo
---FROM peliculas;
+-Obtain id TITANIC
+SELECT id FROM peliculas WHERE pelicula = 'Titanic';
+
+--Obtain ACTORS from TITANIC
+SELECT actor FROM reparto WHERE id = 2;
+
+--Obtain FILMS of HARRISON FORD
+SELECT actor,COUNT(actor) 
+AS NUMBERS_HARRISON_FORD_FILMS
+FROM reparto WHERE actor = 'Harrison Ford'
+GROUP BY actor;
+
+--FILMS BETWEEN 1990-1999
+SELECT pelicula FROM peliculas WHERE ano_estreno BETWEEN 1990 AND 1999 ORDER BY pelicula ASC;
+
+--Count Lenght
+SELECT pelicula, LENGTH(pelicula) AS longitud_titulo
+FROM peliculas;
+
+--Obtain max length
+SELECT MAX(LENGTH(pelicula)) AS longitud_titulo_maximo
+FROM peliculas;
 
 --Group by films
 SELECT peliculas.id, peliculas.pelicula, reparto.actor
