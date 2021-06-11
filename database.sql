@@ -25,7 +25,7 @@ CREATE TABLE reparto (
 \COPY peliculas FROM 'references/peliculas.csv' csv header;
 \COPY reparto FROM 'references/reparto.csv' csv header;
 
--Obtain id TITANIC
+--Obtain id TITANIC
 SELECT id FROM peliculas WHERE pelicula = 'Titanic';
 
 --Obtain ACTORS from TITANIC
